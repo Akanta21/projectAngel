@@ -1,0 +1,67 @@
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="favicons/manifest.json">
+  <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="apple-mobile-web-app-title" content="Ak">
+  <meta name="application-name" content="Ak">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+  <link href="https://fonts.googleapis.com/css?family=Denk+One|Fjalla+One|Oswald" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
+</head>
+<body ng-app="angelApp" ng-controller="mainController" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools" id="nav-bar">
+      <md-button href="#!/">
+        <md-tooltip>Home</md-tooltip>
+        <img class="png-icon" src="favicons/angel.png" style="width: 50px; height: 50px;">
+      </md-button>
+      <span ng-show="currentUserSignedIn" id="username">Welcome back, {{name}} |</span>
+      <md-button class="md-raised" href="#!/">Explore</md-button>
+      <md-button class="md-raised" href="#!/">How it works?</md-button>
+      <span flex></span>
+      <md-button class="md-raised" href="#!/product">Product</md-button>
+      <md-button class="md-raised" href="#!/login" ng-hide="currentUserSignedIn">Login</md-button>
+      <md-button class="md-raised" href="#!/newuser" ng-hide="currentUserSignedIn">SignUp</md-button>
+      <md-button href="#!/profile" ng-show="currentUserSignedIn" class="md-raised" >Profile</md-button>
+      <md-button href="#!/allusers" ng-show="isAdmin" class="md-raised" >All Users</md-button>
+      <md-button ng-show="currentUserSignedIn">Total Price: {{totalPrice | currency}} </md-button>
+      <md-button ng-controller="logoutCtrl" ng-show="currentUserSignedIn" class="md-warn md-hue-1 md-raised" ng-click="logout()">Logout</md-button>
+    </div>
+  </md-toolbar>
+  <div ng-view></div>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/slick-carousel/slick/slick.js"></script>
+  <script src="bower_components/angular-slick/dist/slick.js"></script>
+  <script src="bower_components/ngCart/dist/ngCart.js"></script>
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+  <script src="home/home.js"></script>
+  <script src="login/login.js"></script>
+  <script src="allusers/allusers.js"></script>
+  <script src="newuser/newuser.js"></script>
+  <script src="newitem/newitem.js"></script>
+  <script src="profile/profile.js"></script>
+  <script src="logout.js"></script>
+  <script src="product/product.js"></script>
+</body>
+</html>

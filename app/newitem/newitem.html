@@ -1,0 +1,70 @@
+<div layout="column" layout-fill="layout-fill">
+  <div layout="column" class="loginBox md-whiteframe-20dp">
+    <md-toolbar class='md-hue-3'>
+      <p class="md-toolbar-tools">Add New Item</p>
+    </md-toolbar>
+    <form name="addItemForm">
+      <md-content layout="column" class="md-padding">
+        <md-input-container id="name">
+          <label>Item Name</label>
+          <input name="title" ng-model="formData.title" required/>
+          <div ng-messages="addItemForm.title.$error" style="color:maroon" role="alert">
+            <div ng-message="required">This field is required</div>
+          </div>
+        </md-input-container>
+        <md-input-container id="price">
+          <label>Price</label>
+          <input name="price" type="price" ng-model="formData.price" placeholder="$" required/>
+          <div ng-messages="addItemForm.price.$error" style="color:maroon" role="alert">
+            <div ng-message="required">This field is required</div>
+          </div>
+        </md-input-container>
+        <label for="picture">Picture</label>
+        <select name="picture" id="picture-select" ng-model="picture" >
+          <option ng-repeat="topic in topics" value="{{topic.images.standard_resolution.url}}">
+            <img ng-src="topic.images.standard_resolution.url" alt="topic.name" style="width:100px;height:100px; padding:10px">
+          </option>
+        </select>
+        <!-- <md-input-container id="picture">
+          <label>Picture</label>
+          <md-select name="picture" ng-model="picture">
+            <md-list-item class="md-1-line" ng-repeat="topic in topics">
+              <md-option value="{{topic.images.standard_resolution.url}}">
+                <img ng-src="{{topic.images.standard_resolution.url}}" style="width:100px;height:100px; padding:10px"; />
+                <br />
+                <br />
+              </md-option>
+            </md-list-item>
+          </md-select>
+          <br>
+          <br>
+        </md-input-container> -->
+        <md-input-container id="stock">
+          <label>Stock (QTY)</label>
+          <input name="stock" type="stock" ng-model="formData.stock" required/>
+          <div ng-messages="addItemForm.stock.$error" style="color:maroon" role="alert">
+            <div ng-message="required">This field is required</div>
+          </div>
+        </md-input-container>
+        <md-input-container id="categories">
+          <label>Categories</label>
+          <input name="categories" type="categories" ng-model="formData.categories" required/>
+          <div ng-messages="addItemForm.categories.$error" style="color:maroon" role="alert">
+            <div ng-message="required">This field is required</div>
+          </div>
+        </md-input-container>
+        <md-input-container id="email">
+          <label>Description</label>
+          <textarea name="description" type="description" ng-model="formData.description" required/></textarea>
+          <div ng-messages="addItemForm.description.$error" style="color:maroon" role="alert">
+            <div ng-message="required">This field is required</div>
+          </div>
+        </md-input-container>
+        <div layout="row" layout-align="center center">
+          <md-button class="md-raised md-primary" ng-click="add()">Add item</md-button>
+          <div flex="flex"></div>
+        </div>
+      </md-content>
+    </form>
+  </div>
+</div>

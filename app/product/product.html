@@ -1,0 +1,35 @@
+<div id="productpage">
+  <div layout="column" layout-align="center center">
+    <h2>Available Items</h2>
+    <md-button href="#!/newitem" class="md-accent md-raised" ng-show="isAdmin" >Add a new item</md-button>
+    <label class="line"></label>
+  </div>
+    <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
+      <div ng-repeat='topic in topics' flex-xs flex-gt-xs="33" layout="column">
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch style="height: 313px !important">
+         <md-card-title>
+           <md-card-title-text>
+             <span class="md-headline">{{topic.title}}</span>
+             <br/>
+             <span class="md-subhead">{{topic.description | limitTo:70}}{{topic.description.length > 70 ? '...' : ''}}</span>
+              <br/>
+             <span class="price-subhead md-primary">{{topic.price|currency}}</span>
+           </md-card-title-text>
+           <md-card-title-media>
+             <div class="md-media-lg card-media">
+               <img id="card" ng-src="{{topic.picture}}" />
+             </div>
+           </md-card-title-media>
+         </md-card-title>
+         <md-card-actions layout="row" layout-align="end center">
+           <md-button class="md-primary md-raised" ng-click="showAdvanced($event, topic)">
+             View More
+           </md-button>
+           <md-button class="md-warn md-raised" ng-click="delete(topic._id)" ng-show="isAdmin">Delete</md-button>
+           <md-button class="md-accent md-raised" ng-click="addToCart( topic.price)" ng-show="!isAdmin && currentUserSignedIn">Add to Cart</md-button>
+           <!-- <md-button class="md-warn md-raised" ng-click="removeCart(topic.title, topic.price)" ng-show="!isAdmin && currentUserSignedIn">Remove from cart</md-button> -->
+           <md-button class="md-primary md-raised" ng-click="addToHistory(topic.title)" ng-show="currentUserSignedIn">Wishlist!</md-button>
+         </md-card-actions>
+       </md-card>
+    </md-content>
+</div>

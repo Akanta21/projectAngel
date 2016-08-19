@@ -1,0 +1,26 @@
+<div layout="column" layout-align="center center" layout-fill="layout-fill">
+  <div layout="column" class="loginBox md-whiteframe-20dp">
+    <md-toolbar class='md-hue-1'>
+      <p class="md-toolbar-tools">LOG IN</p>
+    </md-toolbar>
+
+    <form name="loginForm">
+      <md-content layout="column" class="md-padding loginForm">
+        <md-input-container id="email">
+          <label>Email</label>
+          <input type="email" ng-model="formData.email"/>
+        </md-input-container>
+        <md-input-container>
+          <label>Password</label>
+          <input type="password" ng-model="formData.password"/>
+        </md-input-container>
+        <div layout="row" layout-align="center center">
+          <md-button class="md-raised md-primary" ng-click="login()">Login</md-button>
+          <div flex="flex"></div>
+          <!-- <md-button href="" md-no-ink="md-no-ink">Forgot Password</md-button> -->
+        </div>
+      </md-content>
+    </form>
+    <h2 class="error-msg"ng-if="message">Incorrect user email or password!</h2>
+  </div>
+</div>

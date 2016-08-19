@@ -1,0 +1,31 @@
+<md-dialog aria-label="{{item.title}}" ng-controller="productCtrl" ng-cloak style="height:100% !important">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools" layout="row" layout-align="center center">
+        <md-icon md-svg-src="favicons/ecommerce_sales.svg" aria-label="Close dialog"></md-icon>
+        <h2 id="item-title">{{item.title}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="addToCart(item.price)">
+          <md-icon md-svg-src="favicons/ecommerce_cart_plus.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <img id="info-img" ng-src="{{item.picture}}" style="margin-left: 350px ; max-width: 100%;" alt="{{item.title}}" />
+        <p>
+          {{item.description}}
+        </p>
+        <h1>
+          {{item.price | currency}}
+        </h1>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button href="https://www.instagram.com/torajamelo/" target="_blank" md-autofocus>
+        More on Torajamelo
+      </md-button>
+      <span flex></span>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

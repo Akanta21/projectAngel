@@ -1,0 +1,10 @@
+logs/*
+!.gitkeep
+node_modules/
+tmp
+.DS_Store
+.idea
+e2e-tests
+.travis.yml
+.bowerrc
+karma.conf.js

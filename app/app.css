@@ -1,0 +1,86 @@
+body{
+  font-family: 'Fjalla One', sans-serif
+}
+#nav-bar{
+  background-color: white;
+}
+.loginBox{
+  width:500px;
+  margin:0 auto;
+}
+.carousel-button1{
+  background: #FFA726;
+  padding:0 25%
+}
+.carousel-button2{
+  background: #74D6D2;
+  padding: 0 25%
+}
+.home{
+  background-color:#74D6D2
+}
+footer{
+  text-align:center
+}
+footer img{
+  height:35px;
+  width:35px
+}
+.error-msg{
+  text-align:center
+}
+
+#users-table{
+  align-items: center;
+  margin: 0 auto;
+}
+#users-table tbody tr{
+  padding:50px;
+  margin:50px;
+}
+md-content.md-default-theme, md-content {
+  color: rgba(76,219,148,1);
+  background-color: rgb(249,249,249);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.md-dialog-container{
+  height:700px; !important
+}
+img{
+  width:500px;
+  height:400px;
+  /*overflow: hidden;*/
+}
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+.carddemoBasicUsage .card-media {
+  background-color: #999999; }
+/* for dropdown menu */
+.menudemoBasicUsage .md-menu-demo {
+  padding: 24px; }
+.menudemoBasicUsage .menu-demo-container {
+  min-height: 200px; }
+
+#centered-page {
+  display: flex;
+  flex-flow: column-wrap;
+  background-color: rgb(249,249,249);
+  align-items: center;
+}
+#card{
+  height:152px;
+  width:152px
+}
+/*product page*/
+.price-subhead{
+  color: green;
+  font-weight: bold;
+  font-size: 24px;
+}
+#info-img{
+  height:290px;
+  width:290px
+}

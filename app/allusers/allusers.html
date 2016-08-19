@@ -1,0 +1,11 @@
+<table id="users-table">
+  <tr>
+    <th>Name</th>
+    <th>User-Email</th>
+  </tr>
+  <tr ng-repeat="user in users">
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+    <td><button ng-click=deleteUser(user._id)>Delete User</button></td>
+  </tr>
+</table>

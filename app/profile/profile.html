@@ -1,0 +1,35 @@
+<div layout="column" layout-fill="layout-fill">
+  <div ng-hide="editDisplay">
+    <div>{{name}}</div>
+    <div>{{user_email}}</div>
+    <button ng-click="editUser()">Edit Details</button>
+  </div>
+  <div layout="column" class="loginBox md-whiteframe-5dp" ng-show="editDisplay">
+    <md-toolbar class='md-hue-1'>
+      <p class="md-toolbar-tools" layout-align="center center">Edit User</p>
+    </md-toolbar>
+    <form name="editUserForm">
+      <md-content layout="column" class="md-padding">
+        <md-input-container id="name">
+          <label>Name</label>
+          <input name="name" type="name" ng-model="formData.name"/>
+        </md-input-container>
+        <md-input-container id="email">
+          <label>Email</label>
+          <input name="email" type="email" ng-model="formData.email" />
+        </md-input-container>
+        <md-input-container>
+          <label>Password</label>
+          <input name="password" type="password" ng-model="formData.password" required/>
+          <div ng-messages="editUserForm.password.$error" style="color:maroon" role="alert">
+            <div ng-message="required">This field is required</div>
+          </div>
+        </md-input-container>
+        <div layout="row" layout-align="center center">
+          <md-button class="md-raised md-primary" ng-click="saveUser()">Update details</md-button>
+          <div flex="flex"></div>
+        </div>
+      </md-content>
+    </form>
+  </div>
+</div>
